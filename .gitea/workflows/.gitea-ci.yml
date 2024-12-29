@@ -1,5 +1,9 @@
+name: Gitea Actions Demo
+run-name: ${{ gitea.actor }} is testing out Gitea Actions 🚀
+on: [push]
+
 jobs:
-  deploy-to-minio:
+  Explore-Gitea-Actions:
     runs-on: ubuntu-latest
     steps:
       - name: Set Minio Alias
