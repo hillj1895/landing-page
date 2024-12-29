@@ -1,0 +1,7 @@
+pipelines:
+  default:
+    - name: deploy-to-minio
+      image: minio/mc
+      commands:
+        - mc alias set minio http://192.168.4.129 gitea-user GiteaSecret123
+        - mc cp index.html minio/jbunkerhill.com/index.html
