@@ -1,7 +1,10 @@
-pipelines:
-  default:
-    - name: deploy-to-minio
-      image: minio/mc
-      commands:
-        - mc alias set minio http://192.168.4.129 gitea-user GiteaSecret123
-        - mc cp index.html minio/jbunkerhill.com/index.html
+jobs:
+  deploy-to-minio:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set Minio Alias
+        run: |
+          mc alias set minio http://192.168.4.129 gitea-user GiteaSecret123
+      - name: Upload index.html to Minio
+        run: |
+          mc cp index.html minio/jbunkerhill.com/index.html
