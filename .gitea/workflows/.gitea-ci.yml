@@ -20,4 +20,4 @@ jobs:
           mc alias set minio http://192.168.4.129:9000 aGhrfpvoYjBpMipmh4J0 qOJ5NcKW1nu6VeFyZhP6AGvS9cAz4jItzUORhoS4
       - name: Upload src Directory to Minio Bucket
         run: |
-          mc mirror --overwrite ../../src/ minio/jbunkerhill.com/
+          mc mirror --overwrite src/ minio/jbunkerhill.com/
