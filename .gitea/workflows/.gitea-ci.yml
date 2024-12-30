@@ -1,14 +1,20 @@
-name: Gitea Actions Demo
-run-name: ${{ gitea.actor }} is testing out Gitea Actions 🚀
-on: [push]
-
+name: Deploy Assets to Minio
+on:
+  push:
+    branches:
+      - master
 jobs:
-  Explore-Gitea-Actions:
+  deploy-to-minio:
     runs-on: ubuntu-latest
     steps:
+      - name: Install Minio Client
+        run: |
+          curl -LO https://dl.min.io/client/mc/release/linux-amd64/mc
+          chmod +x mc
+          sudo mv mc /usr/local/bin/
       - name: Set Minio Alias
         run: |
           mc alias set minio http://192.168.4.129 gitea-user GiteaSecret123
-      - name: Upload index.html to Minio
+      - name: Upload src Directory to Minio Bucket
         run: |
-          mc cp index.html minio/jbunkerhill.com/index.html
+          mc cp --recursive src/ minio/jbunkerhill.com/
