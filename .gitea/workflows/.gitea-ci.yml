@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Check out repository
         run: |
-          git clone ${GITEA_REPOSITORY_URL}
+          git clone https://source.jbunkerhill.com/hillj1895/landing-page.git .
       - name: Install Minio Client
         run: |
           curl -LO https://dl.min.io/client/mc/release/linux-amd64/mc
