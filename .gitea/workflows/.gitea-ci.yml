@@ -7,6 +7,9 @@ jobs:
   deploy-to-minio:
     runs-on: ubuntu-latest
     steps:
+      - name: Check out repository
+        run: |
+          git clone ${GITEA_REPOSITORY_URL} .
       - name: Install Minio Client
         run: |
           curl -LO https://dl.min.io/client/mc/release/linux-amd64/mc
