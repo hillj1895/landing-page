@@ -30,12 +30,6 @@
 /*#endregion Variables*/
 
 /*#region Globals*/
-@font-face {
-  font-family: 'Lexend';
-  src: url('./assets/fonts/Lexend-VariableFont_wght.ttf') format('truetype');
-  font-weight: 100 900; /* Define the weight range of the variable font */
-  font-display: swap; /* Ensures that text remains visible while the font loads */
-}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -125,7 +119,7 @@ body {
 /*#region Text */
 @font-face {
   font-family: 'Lexend';
-  src: url('/fonts/Lexend-VariableFont_wght.ttf') format('truetype');
+  src: url('./assets/fonts/Lexend-VariableFont_wght.ttf') format('truetype');
   font-weight: 100 900; /* Define the weight range of the variable font */
   font-display: swap; /* Ensures that text remains visible while the font loads */
 }
