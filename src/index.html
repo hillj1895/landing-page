@@ -2,7 +2,7 @@
   <head>
     <title>Joe Hill</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta name="keywords" content="home server, personal website, landing page">
     <meta name="author" content="Joe Hill">
     <meta property="og:title" content="Joe Hill">
@@ -15,13 +15,32 @@
     <link rel="stylesheet" type="text/css" href="./index.css"></link>
   </head>
   <body class="dark-theme">
+
+    <header class="position-sticky top-0 d-flex justify-content-between align-items-center p-1 z-index-1000 header">
+      <div class="d-flex justify-content-between align-items-center mx-auto px-2 header-content">
+        <div class="text-xl">
+          Joe Hill
+        </div>
+        <nav class="d-flex align-items-center">
+          <ul class="d-flex d-sm-none gap-3 list-style-none">
+            <li><a href="#" class="header-link">Home</a></li>
+            <li><a href="#" class="header-link">About</a></li>
+            <li><a href="#" class="header-link">Services</a></li>
+            <li><a href="#" class="header-link">Contact</a></li>
+          </ul>
+          <div class="d-none d-sm-flex">
+            <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#e8eaed"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+          </div>
+        </nav>
+
+      </div>
+    </header>
+
     <div class="container">
-      <h1>Joe Hill</h1>
       <p>Welcome to my home server landing page</p>
       <button id="theme-switcher" onclick="toggleTheme()">
         Switch Theme
       </button>
-
     </div>
   </body>
   <script src="./index.js"></script>
