@@ -124,3 +124,6 @@
   list-style: none;
 }
 
+a {
+  color: var(--primary-color);
+}

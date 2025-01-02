@@ -36,12 +36,6 @@
   --spacer-md: 1rem;
   --spacer-lg: 2rem;
   
-  /* Breakpoints for responsiveness */
-  --breakpoint-sm: 576px; /* Small screens (phones) */
-  --breakpoint-md: 768px; /* Medium screens (tablets) */
-  --breakpoint-lg: 992px; /* Large screens (desktops) */
-  --breakpoint-xl: 1200px; /* Extra large screens */
-  
   /* Flex */
   --flex-direction-row: row;
   --flex-direction-column: column;

@@ -26,14 +26,22 @@ body {
   background-color: var(--background-dark);
   color: var(--text-dark);
 }
-/*#endregion Theme*/
 
-/*#region General Utilities*/
+/*#region Custom TODO: Genericize*/
 
-/*#endregion General Utilities*/
+.profile-img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  float: right;
+}
+
+@media (max-width: 768px) {
+  .profile-img {
+    width: 100px;
+    height: 100px;
+  }
+}
 
 
-/*#region Text */
-
-/*#endregion Text */
-
+/*$endregion Custom*/
