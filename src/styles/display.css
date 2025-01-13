@@ -4,7 +4,7 @@
 /*#region Header*/
 /* Header Styling */
 .header {
-  background: color-mix(in srgb,var(--background-color-dark),#000 15%);
+  background: var(--background-dark);
 }
 
 .header-content {
