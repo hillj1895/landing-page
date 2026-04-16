@@ -1,60 +1,62 @@
-<html>
-  <head>
-    <title>Joe Hill</title>
-    <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <meta name="keywords" content="home server, personal website, landing page">
-    <meta name="author" content="Joe Hill">
-    <meta property="og:title" content="Joe Hill">
-    <meta property="og:description" content="Welcome to my home server landing page">
-    <meta property="og:image" content="thumbnail.jpg">
-    <meta property="og:url" content="https://joe-hill.me">
-    <meta property="og:type" content="website">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Joe Hill</title>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <meta name="description" content="Joe Hill — Senior Full-Stack Engineer based in Denver, CO.">
+  <meta name="keywords" content="software engineer, full-stack, TypeScript, React, Node.js">
+  <meta name="author" content="Joe Hill">
+  <meta property="og:title" content="Joe Hill">
+  <meta property="og:description" content="Senior Full-Stack Engineer — TypeScript, React, Node.js, AWS">
+  <meta property="og:url" content="https://joe-hill.me">
+  <meta property="og:type" content="website">
 
-    <link rel="icon" href="./assets/icons/favicon.svg" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="./index.css"></link>
-  </head>
-  <body class="dark-theme">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="./assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
 
-    <header class="position-sticky top-0 d-flex justify-content-between align-items-center p-1 z-index-1000 header">
-      <div class="d-flex justify-content-between align-items-center mx-auto px-2 header-content">
-        <div class="text-xl">
-          Joe Hill
-        </div>
-        <p>Full-Stack Engineer</p>
-        <!-- <nav class="d-flex align-items-center">
-          <ul class="d-flex d-sm-none gap-3 list-style-none">
-            <li><a href="#" class="header-link">Home</a></li>
-            <li><a href="#" class="header-link">About</a></li>
-            <li><a href="#" class="header-link">Services</a></li>
-            <li><a href="#" class="header-link">Contact</a></li>
-          </ul>
-          <div class="d-none d-sm-flex">
-            <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#e8eaed"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
-          </div>
-        </nav> -->
+  <!--ENV_BANNER-->
 
+  <header class="position-sticky top-0 z-index-1000 header">
+    <div class="d-flex justify-content-between align-items-center mx-auto header-content">
+      <div>
+        <div class="text-xl font-weight-bold">Joe Hill</div>
+        <div class="header-subtitle">Full-Stack Engineer</div>
       </div>
-    </header>
-
-    <div class="container">
-      <div class="py-3">
-        <p><img src="./assets/images/headshot.jpg" alt="Joseph Hill" class="ml-2 mb-2 profile-img">Hello! I'm Joe Hill, a senior full-stack developer with a strong background in software engineering and cloud technologies. I specialize in building intuitive, data-driven solutions, and have experience working in financial technology, real estate, and other industries. I am passionate about creating scalable applications that solve real-world problems.</p>
-
-        <p class="py-2">I have a broad range of technical skills, including expertise in HTML, CSS, JavaScript, TypeScript, Node.js, React, Angular, and cloud services like AWS and Azure. I am also skilled in DevOps practices, CI/CD pipelines, and containerization using Docker and Kubernetes.</p>
-    
-        <p class="py-2">Currently, I work as a Senior Software Engineer at <a href="https://www.cars.com" target="_blank">Cars.com</a> where I contribute to consumer auto financing software initiatives. My past experience includes roles at Realogy and Vanguard Group, where I developed modern, user-centric web applications for clients and customers.</p>
-    
-        <p class="py-2">When I'm not coding, I enjoy working on personal projects, golfing, playing the piano, and cooking. I have a passion for learning new things and staying up-to-date with industry trends.</p>
-
-        <p class="py-2">One of my more recent personal projects is hosting my own on-premise servers. The content you are viewing not is not only 100% vanilla JS, CSS and HTML, but is also fully hosted on my own servers. I serve this site as an unminified HTML document, so feel free to take a look around DevTools to keep up with the work in progress!</p>
-            
-        <p class="py-2">If you'd like to learn more about my work, check out my <a href="./pages/resume.html">full resume</a>. If you'd like to explore potential collaboration opportunities or just want to say hi, feel free to contact me at my <a href="mailto:HillJ1895@yahoo.com">email</a> or <a href="https://www.linkedin.com/in/joseph-r-hill/" target="_blank">Linkedin</a>!</p>
-      </div>
-      <!-- <button id="theme-switcher" onclick="toggleTheme()">
-        Switch Theme
-      </button> -->
+      <nav class="d-flex align-items-center" style="gap: 1.25rem">
+        <ul class="d-flex align-items-center list-style-none" style="gap: 1.25rem">
+          <li><a href="./pages/resume.html" class="nav-link">Resume</a></li>
+          <li><a href="https://www.linkedin.com/in/joseph-r-hill/" target="_blank" class="nav-link">LinkedIn</a></li>
+          <li><a href="mailto:HillJ1895@yahoo.com" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
     </div>
-  </body>
+  </header>
+
+  <main class="container py-3">
+
+    <section class="profile-section fade-in">
+      <img src="./assets/images/headshot.jpg" alt="Joe Hill" class="profile-img">
+      <div class="profile-text">
+        <h1 class="text-xl font-weight-bold mb-2">Hey, I'm Joe.</h1>
+        <p class="mb-2">Senior full-stack engineer with 7+ years building and scaling production systems. I specialize in TypeScript, React, and Node.js, with a strong background in fintech, cloud infrastructure, and system design.</p>
+        <p class="mb-2">Currently at <a href="https://www.cars.com" target="_blank">Cars Commerce</a>, where I've built dealer-facing sales workflow tooling end-to-end and led complex lender integrations from the ground up. Previously at Realogy and Vanguard Group.</p>
+        <p class="mb-2">Outside of work I'm into golf, cooking, learning piano, and running my own homelab — this site is served from both a Proxmox server in my home and a CloudFront distribution on AWS.</p>
+        <div class="cta-links">
+          <a href="./pages/resume.html" class="btn-primary">View Resume</a>
+          <a href="https://www.linkedin.com/in/joseph-r-hill/" target="_blank" class="btn-outline">LinkedIn</a>
+          <a href="mailto:HillJ1895@yahoo.com" class="btn-outline">Email</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
   <script src="./index.js"></script>
+</body>
 </html>

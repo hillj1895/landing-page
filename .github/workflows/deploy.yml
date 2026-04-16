@@ -1,0 +1,58 @@
+name: Deploy
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  deploy-aws:
+    name: Deploy to AWS (joe-hill.me)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build for AWS
+        run: bash build.sh aws
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - name: Sync to S3
+        run: |
+          aws s3 sync dist/ s3://${{ secrets.AWS_S3_BUCKET }} --delete \
+            --exclude "*.pdf"
+          aws s3 sync dist/ s3://${{ secrets.AWS_S3_BUCKET }} \
+            --exclude "*" --include "*.pdf" \
+            --content-type "application/pdf" \
+            --content-disposition "attachment"
+
+      - name: Invalidate CloudFront cache
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id ${{ secrets.AWS_CF_DISTRIBUTION_ID }} \
+            --paths "/*"
+
+  deploy-local:
+    name: Deploy to Local Mirror (local.joe-hill.me)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build for local
+        run: bash build.sh local
+
+      - name: Install MinIO client
+        run: |
+          curl -fsSL https://dl.min.io/client/mc/release/linux-amd64/mc -o mc
+          chmod +x mc
+
+      - name: Sync to MinIO
+        run: |
+          ./mc alias set homelab ${{ secrets.MINIO_ENDPOINT }} \
+            ${{ secrets.MINIO_ACCESS_KEY }} \
+            ${{ secrets.MINIO_SECRET_KEY }}
+          ./mc mirror --overwrite --remove dist/ homelab/${{ secrets.MINIO_BUCKET }}/
