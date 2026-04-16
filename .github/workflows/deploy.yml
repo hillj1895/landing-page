@@ -8,6 +8,7 @@ jobs:
   deploy-aws:
     name: Deploy to AWS (joe-hill.me)
     runs-on: ubuntu-latest
+    environment: prod
     steps:
       - uses: actions/checkout@v4
 
@@ -23,9 +24,9 @@ jobs:
 
       - name: Sync to S3
         run: |
-          aws s3 sync dist/ s3://${{ secrets.AWS_S3_BUCKET }} --delete \
+          aws s3 sync dist/ s3://${{ vars.AWS_S3_BUCKET }} --delete \
             --exclude "*.pdf"
-          aws s3 sync dist/ s3://${{ secrets.AWS_S3_BUCKET }} \
+          aws s3 sync dist/ s3://${{ vars.AWS_S3_BUCKET }} \
             --exclude "*" --include "*.pdf" \
             --content-type "application/pdf" \
             --content-disposition "attachment"
