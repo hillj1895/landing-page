@@ -82,6 +82,7 @@ resource "aws_cloudfront_origin_access_control" "site" {
 # ---------------------------------------------------------------------------
 resource "aws_cloudfront_distribution" "site" {
   enabled             = true
+  is_ipv6_enabled     = true
   default_root_object = "index.html"
   aliases             = [var.domain, "www.${var.domain}"]
   price_class         = "PriceClass_100"
@@ -156,9 +157,10 @@ resource "aws_s3_bucket_policy" "site" {
 # Route 53 DNS records — A/AAAA alias to CloudFront
 # ---------------------------------------------------------------------------
 resource "aws_route53_record" "apex_a" {
-  zone_id = data.aws_route53_zone.primary.zone_id
-  name    = var.domain
-  type    = "A"
+  zone_id         = data.aws_route53_zone.primary.zone_id
+  name            = var.domain
+  type            = "A"
+  allow_overwrite = true
   alias {
     name                   = aws_cloudfront_distribution.site.domain_name
     zone_id                = aws_cloudfront_distribution.site.hosted_zone_id
@@ -167,9 +169,10 @@ resource "aws_route53_record" "apex_a" {
 }
 
 resource "aws_route53_record" "apex_aaaa" {
-  zone_id = data.aws_route53_zone.primary.zone_id
-  name    = var.domain
-  type    = "AAAA"
+  zone_id         = data.aws_route53_zone.primary.zone_id
+  name            = var.domain
+  type            = "AAAA"
+  allow_overwrite = true
   alias {
     name                   = aws_cloudfront_distribution.site.domain_name
     zone_id                = aws_cloudfront_distribution.site.hosted_zone_id
@@ -178,9 +181,10 @@ resource "aws_route53_record" "apex_aaaa" {
 }
 
 resource "aws_route53_record" "www_a" {
-  zone_id = data.aws_route53_zone.primary.zone_id
-  name    = "www.${var.domain}"
-  type    = "A"
+  zone_id         = data.aws_route53_zone.primary.zone_id
+  name            = "www.${var.domain}"
+  type            = "A"
+  allow_overwrite = true
   alias {
     name                   = aws_cloudfront_distribution.site.domain_name
     zone_id                = aws_cloudfront_distribution.site.hosted_zone_id
