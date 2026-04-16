@@ -57,4 +57,4 @@ jobs:
           ./mc alias set homelab ${{ secrets.MINIO_ENDPOINT }} \
             ${{ secrets.MINIO_ACCESS_KEY }} \
             ${{ secrets.MINIO_SECRET_KEY }}
-          ./mc mirror --overwrite --remove dist/ homelab/${{ secrets.MINIO_BUCKET }}/
+          ./mc mirror --overwrite --remove dist/ homelab/${{ vars.MINIO_BUCKET }}/
