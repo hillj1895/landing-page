@@ -31,9 +31,9 @@ ul {
 
 /*#region Environment Banner*/
 .env-banner {
-  background-color: rgba(96, 165, 250, 0.15);
+  background-color: rgba(88, 166, 255, 0.1);
   color: var(--text-dark);
-  border-bottom: 1px solid rgba(96, 165, 250, 0.25);
+  border-bottom: 1px solid rgba(88, 166, 255, 0.18);
   text-align: center;
   padding: 0.35rem 1rem;
   font-size: var(--font-size-sm);
@@ -48,7 +48,7 @@ ul {
 /*#region Header*/
 .header {
   background: var(--background-dark);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 .header-content {
   max-width: var(--container-max-width);
@@ -88,7 +88,7 @@ ul {
   height: 180px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid rgba(96, 165, 250, 0.4);
+  border: 2px solid rgba(88, 166, 255, 0.35);
   flex-shrink: 0;
 }
 @media (max-width: 576px) {
@@ -109,7 +109,7 @@ ul {
   display: inline-block;
   padding: 0.45rem 1.1rem;
   background-color: var(--color-primary);
-  color: #0f172a;
+  color: #0d1117;
   border-radius: 6px;
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-semibold);
@@ -150,7 +150,7 @@ ul {
   font-weight: var(--font-weight-semibold);
   padding-bottom: 0.5rem;
   margin-bottom: 1.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 /*#endregion Section*/
 
@@ -177,24 +177,23 @@ ul {
   border-radius: 999px;
   font-size: var(--font-size-xs);
   font-weight: 500;
-  background-color: rgba(96, 165, 250, 0.1);
+  background-color: rgba(88, 166, 255, 0.1);
   color: var(--color-primary);
-  border: 1px solid rgba(96, 165, 250, 0.2);
+  border: 1px solid rgba(88, 166, 255, 0.22);
 }
 /*#endregion Skill Badges*/
 
 /*#region Work Cards*/
 .card {
-  background-color: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  background-color: var(--background-surface);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 10px;
   padding: 1.5rem 1.75rem;
   margin-bottom: 1rem;
   transition: border-color 0.2s, background-color 0.2s;
 }
 .card:hover {
-  background-color: rgba(255, 255, 255, 0.05);
-  border-color: rgba(96, 165, 250, 0.3);
+  border-color: rgba(88, 166, 255, 0.4);
 }
 .job-header {
   display: flex;
@@ -209,20 +208,22 @@ ul {
   font-size: var(--font-size-md);
 }
 .job-company {
-  opacity: 0.6;
+  color: var(--text-muted);
   font-size: var(--font-size-sm);
   margin-top: 0.1rem;
 }
 .job-meta {
   text-align: right;
   font-size: var(--font-size-sm);
-  opacity: 0.4;
+  color: var(--text-muted);
+  opacity: 0.7;
   flex-shrink: 0;
 }
 .job-stack {
   margin-top: 0.75rem;
   font-size: var(--font-size-xs);
-  opacity: 0.45;
+  color: var(--text-muted);
+  opacity: 0.7;
 }
 /*#endregion Work Cards*/
 
